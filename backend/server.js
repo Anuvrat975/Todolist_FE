@@ -19,6 +19,19 @@ catch(err){
 const uri = 'mongodb+srv://root:root@cluster0.hetakbz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 const client = new mongoose.mongo.MongoClient(uri)
 
+app.get('/', (req,res)=>{
+    res.send('This is the backend')
+})
+
+app.get('./login', (req,res)=>{
+    const {uname, password} = req.body
+    const db  = client.db('test')
+    const collection = db.collection('users')
+    const res = collection.findOne({username: uname, password: password})
+
+
+})
+
 app.get('/gettasks', async (req,res)=>{
     try{
         var r = await tschema.find()
@@ -75,7 +88,6 @@ app.post('/deltask', async (req, res)=>{
             await tschema.findByIdAndDelete(objectIds[i])
             i++;
         }
-
         //await tschema.findByIdAndDelete(objectIds)
         res.json({message:'Tasks deleted successfully', deletedCount: result.deletedCount})    
     }
