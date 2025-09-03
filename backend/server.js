@@ -19,9 +19,6 @@ catch(err){
 const uri = 'mongodb+srv://root:root@cluster0.hetakbz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 const client = new mongoose.mongo.MongoClient(uri)
 
-app.get('/', (req,res)=>{
-    res.send('This is the backend')
-})
 
 app.get('./login', (req,res)=>{
     const {uname, password} = req.body
