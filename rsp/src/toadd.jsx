@@ -35,7 +35,7 @@ export default function Toadd({input1, setRes, selected, setInput}) {
     setLen(len+1)
     const task = in1.toString()   
     try{
-      const res = await axios.post('http://localhost:5000/addtask', { task: task, s2: s2, e2: e2 })
+      const res = await axios.post('https://todolist-be-six.vercel.app/addtask', { task: task, s2: s2, e2: e2 })
       console.log(res)
       setRes(len)
     }
