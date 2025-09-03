@@ -20,14 +20,14 @@ const uri = 'mongodb+srv://root:root@cluster0.hetakbz.mongodb.net/?retryWrites=t
 const client = new mongoose.mongo.MongoClient(uri)
 
 
-app.get('./login', (req,res)=>{
+/*app.get('./login', (req,res)=>{
     const {uname, password} = req.body
     const db  = client.db('test')
     const collection = db.collection('users')
     const res = collection.findOne({username: uname, password: password})
 
 
-})
+})*/
 
 app.get('/gettasks', async (req,res)=>{
     try{
