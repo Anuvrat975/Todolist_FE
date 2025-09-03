@@ -46,7 +46,7 @@ export default function Toadd({input1, setRes, selected, setInput}) {
 
   const handleDelete = async (e)=>{
     try{
-      const res = await axios.post('http://localhost:5000/deltask', {selected: selected})
+      const res = await axios.post('https://todolist-be-six.vercel.app/deltask', {selected: selected})
       console.log(res)
       setRes(Date.now())      
     }catch(err){

@@ -23,7 +23,7 @@ export default function Container() {
   useEffect(()=>{
     async function fetchtasks(){
       try{
-        var info = await axios.get('http://localhost:5000/gettasks')        
+        var info = await axios.get('https://todolist-be-six.vercel.app/gettasks')        
         setInput(info.data)
         console.log(info.data)
       }catch(err){
@@ -35,6 +35,7 @@ export default function Container() {
 
   return (    
     <div className='container'>
+      
       <p>Number of tasks: {i1.length}</p>      
       <Todos input1={i1} selected={selected} setSelected={setSelected}/>
       {/*<Todos input1={i1} />*/}
